@@ -1,0 +1,118 @@
+<! doctype html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - MA04 - Question 1</title>
+    
+
+        <style>* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+
+.row {margin: 0 -5px;}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;}
+
+</style>
+
+<script>
+        fetch('https://jsonplaceholder.typocode.com/todos')
+        .then(
+        function(response) {
+        return response.json();
+        }
+        )
+       .then{
+           function(respData) {
+               console.log(respData);
+           }
+       }
+    
+    var request = new XMLHttpRequest();
+    
+    request.open('GET', "https://jsonplaceholder.typocode.com/todos");
+    
+    request.onload = function() {
+        var respone = request.response;
+        var parsedData = JSON.perse(respone);
+        console.log(parsedData);
+       
+        
+        for(item in parsedData) {
+            var userid = parsedData[item].userid;
+            var todos = document.createElement('coloum');
+            todos.innerHTML = userid
+            document.body.appendChild(todos);
+        }
+        
+        
+    };
+    
+    request.send();
+        </script>
+    </head>
+
+       <body>
+      <meta charset="utf-8">
+           
+           <div class="row">
+  <div class="column">
+    <div class="card"><p>"userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+        "completed": false</p></div>
+  </div>
+            
+  <div class="column">
+    <div class="card">"userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false
+  </div>
+   </div>
+               
+  <div class="column">
+    <div class="card">"userId": 1,
+    "id": 3,
+       "title": "fugiat veniam minus"
+  </div>
+   </div>
+    
+   <div class="column">
+    <div class="card">"userId": 1,
+    "id": 4,
+    "title": "et porro tempora",
+    "completed": true
+  </div>
+   </div>
+               
+
+           </div>
+    
+    </body>
+ </html>
